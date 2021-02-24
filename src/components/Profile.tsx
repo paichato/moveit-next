@@ -7,7 +7,9 @@ export function Profile(){
             <img src="https://github.com/paichato.png" alt="Marlon D Jesus"/>
             <div>
                 <strong>Marlon D Jesus</strong>
-                <p>Level 1</p>
+                <p>
+                    <img src="icons/level.svg" alt="Level"/>
+                    Level 1</p>
             </div>
         </div>
     )
