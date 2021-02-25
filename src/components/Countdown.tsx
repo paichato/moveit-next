@@ -7,7 +7,7 @@ let countdownTimeout:NodeJS.Timeout;
 export function Countdown(){
     const {startNewChallenge}= useContext(ChallengesContext);
 
-    const [time, settime] = useState(25*60);
+    const [time, settime] = useState(25*0.2);
     const [isActive, setIsActive] = useState(false);
     const [hasfinished, sethasfinished] = useState(false)
 
