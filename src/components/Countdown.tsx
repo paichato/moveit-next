@@ -35,6 +35,7 @@ export function Countdown(){
         } else if(isActive && time===0){
             sethasfinished(true);
             setIsActive(false);
+            startNewChallenge();
         }
     }, [isActive, time])
 
