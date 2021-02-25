@@ -50,7 +50,13 @@ export function Countdown(){
                         <span>{secondsRight}</span>
                     </div>
             </div>
-            {isActive?(
+            {hasfinished ?(
+                <button disabled type="button" className={styles.countdownButon} >
+                Ciclo encerrado
+            </button>
+            ):(
+                <>
+                {isActive?(
                 <button type="button" className={`${styles.countdownButon} ${styles.countdownActive}`} onClick={resetCountdown}>
                 Abandonar um ciclo
             </button>
@@ -59,6 +65,10 @@ export function Countdown(){
                 Iniciar um ciclo
             </button>
             )}
+                </>
+            )}
+
+            
             
             
         </div>
