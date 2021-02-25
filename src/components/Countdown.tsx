@@ -7,6 +7,7 @@ export function Countdown(){
 
     const [time, settime] = useState(25*60);
     const [isActive, setIsActive] = useState(false);
+    const [hasfinished, sethasfinished] = useState(false)
 
     const minutes= Math.floor(time/60);
     const seconds= time % 60;
@@ -29,6 +30,9 @@ export function Countdown(){
             countdownTimeout=setTimeout(() => {
                 settime(time-1);
             }, 1000);
+        } else if(isActive && time===0){
+            sethasfinished(true);
+            setIsActive(false);
         }
     }, [isActive, time])
 
