@@ -10,7 +10,7 @@ return(
                 <header>Ganhe 400 xp</header>
                 <main>
                     <img src="icons/body.svg" alt="Body"/>
-                    <strong>Movo desafio</strong>
+                    <strong>Novo desafio</strong>
                     <p>Levante e faca uma caminhada de 3 minutos</p>
                 </main>
                 <footer>
