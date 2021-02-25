@@ -57,3 +57,14 @@
     background: var(--blue-dark);
     
 }
+
+.countdownActive{
+    background: var(--white);
+    color:var(--title);
+}
+
+.countdownActive:hover{
+    background: var(--red);
+    color: var(--white);
+    
+}
