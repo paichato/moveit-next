@@ -2,7 +2,7 @@ import { createContext, ReactNode, useState } from "react";
 
 interface ChallengesContextData {
   level: number;
-  currenteXp: number;
+  currentXp: number;
   challengesCompleted: number;
   levelUp: () => void;
   startNewChallenge: () => void;
@@ -16,7 +16,7 @@ export const ChallengesContext = createContext({} as ChallengesContextData);
 
 export function ChallengesProvider({ children }: ChallengesProviderProps) {
   const [level, setlevel] = useState(1);
-  const [currentXp, setcurrentX0] = useState(0);
+  const [currentXp, setcurrentXp] = useState(0);
   const [challengesCompleted, setchallengesCompleted] = useState(0);
 
   function levelUp() {
@@ -30,8 +30,8 @@ export function ChallengesProvider({ children }: ChallengesProviderProps) {
     <ChallengesContext.Provider
       value={{
         level,
-        startNewChallenge,
         currentXp,
+        startNewChallenge,
         challengesCompleted,
         levelUp,
       }}
