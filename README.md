@@ -1,34 +1,88 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![banner](https://github.com/rocketseat-education/nlw-04-reactjs/blob/main/.github/logo.png)
+---------
+# Move.it 💻
+Move.it is an app that combines Pomodoro's technique with physical exercises for those who spend a lot of time in front of the computer.</br>
+O move.it é um app que une a técnica de Pomodoro com a realização de exercícios físicos para quem passa muito tempo na frente do computador.
 
-## Getting Started
+## ✨ Technology/ Tecnologias
+This project was developed with the following technologies
+> Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-First, run the development server:
+- React ⚛
+- Next.js 
+- TypeScript
 
-```bash
-npm run dev
-# or
-yarn dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## What the app looks like/ Aparencia da aplicacao 🙈
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+ ![banner](https://github.com/paichato/moveit-next/blob/main/move-it%20previews/preview1.PNG)
+  ![banner](https://github.com/paichato/moveit-next/blob/main/move-it%20previews/preview2.PNG)
+   ![banner](https://github.com/paichato/moveit-next/blob/main/move-it%20previews/preview3.PNG)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
+--- 
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## How to run the app/ Como executar o aplicativo 🚀
+1. Either click on the link on the right panel or fork/download the app and open the folder in the CLI
+2. Install all dependecies using the 'yarn add' command
+3. Start the web server using the 'yarn dev'. The app will be served at http://localhost:3000
+4. Go to http://localhost:3000 on your browser and start exploring repos<br/></br>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+  > - Clique no link no painel direito ou bifurque / baixe o aplicativo e abra a pasta na CLI
+  > - Instale todas as dependências usando o comando 'yarn add'
+  > - Inicie o servidor web usando o 'yarn start'. O aplicativo será servido em http://localhost:3000
+  > - Vá para http://localhost:3000 em seu navegador e comece a explorar repositórios
 
-## Deploy on Vercel
+## How to explore / Como explorar a app 🔀
+1. Type your Git username on the main screen
+2. Choose your method/time
+3. Start your cycle
+4. Click on "Completei" if you have accomplished the challenge
+5. If you didnt accomplish click on "Falhei" and start the Cycle again
+br/><br/><br/>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## User stories
+Users should be able to:
+
+- Use Their Git name and Git avatar on the app
+- Level up accomplishing challenges
+- View their current XP and how many XP they need to level up
+- Abandon cycle
+
+
+## Features 💎
+> Grab user name and photo through gitname
+> Interactive Countdown
+> Notification and sound for each challenge completed
+
+
+
+
+    
+## Dependecies 💾
+[react](https://github.com/facebook/react)|nextjs|cookie-js
+---|---|---
+typescript|vercel|-
+
+## Why
+This project is part of my personall portfolio. It was built based on [Rocketseat](https://github.com/rocketseat-education)design.<br/>
+Email: tsenane14@gmail.com | Find me on [Linkedin](https://www.linkedin.com/in/marlon-d-jesus-6874271ab/) 
+---- | ----
+
+
+UI/UX credits: [Rocketseat](https://github.com/rocketseat-education)
+
+
+## Future Features 🎲
+- Choose Language
+- CountDown Options
+- Dark Mode
+
+---
+
+
+
+<a href='https://ko-fi.com/D1D63F21Y' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi2.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a> | 
