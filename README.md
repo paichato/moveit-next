@@ -1,8 +1,8 @@
 ![banner](https://github.com/rocketseat-education/nlw-04-reactjs/blob/main/.github/logo.png)
 ---------
 # Move.it 💻
-Move.it is an app that combines Pomodoro's technique with physical exercises for those who spend a lot of time in front of the computer.</br>
-O move.it é um app que une a técnica de Pomodoro com a realização de exercícios físicos para quem passa muito tempo na frente do computador.
+Move.it is an app that combines Pomodoro's technique with physical exercises for those who spend a lot of time in front of the computer.</br> </br>
+> O move.it é um app que une a técnica de Pomodoro com a realização de exercícios físicos para quem passa muito tempo na frente do computador.
 
 ## ✨ Technology/ Tecnologias
 This project was developed with the following technologies
