@@ -8,6 +8,7 @@ import { ChallengeBox } from "../components/ChallengeBox";
 import { CountdownProvider } from "../contexts/CountdownContext";
 import {GetServerSideProps} from 'next'
 import { ChallengesProvider } from "../contexts/ChallengeContext";
+import { Hero } from "../components/Hero";
 
 interface HomeProps{
   level:number;
@@ -20,12 +21,14 @@ interface HomeProps{
 export default function Home(props:HomeProps) {
   return (
     <ChallengesProvider level={props.level} currentXp={props.currentXp} challengesCompleted={props.challengesCompleted}>
-    <div className={styles.container}>
+     <Hero/>
+    {/* <div className={styles.container}>
      <Head>
        <title>
          Inicio | move.it
        </title>
        </Head> 
+      
     <ExperienceBar/>
 
     <CountdownProvider>
@@ -41,7 +44,7 @@ export default function Home(props:HomeProps) {
         </div>
       </section>
     </CountdownProvider>
-  </div>
+  </div> */}
   </ChallengesProvider>
     
   )
