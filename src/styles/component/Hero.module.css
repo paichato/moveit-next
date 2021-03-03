@@ -1,0 +1,115 @@
+.container{
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--blue);
+}
+
+.container > img{
+    position: absolute;
+    z-index: 0;
+    /* background-position: top center; */
+    margin: 0 28.9vw;
+    height: 100%;
+    
+    
+}
+
+.container > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-between; */
+    z-index: 2;
+    position: relative;
+    /* right: 30vw; */
+    top:40vh;
+    text-align: left;
+    width: 466px;
+    margin-left: 2vw;
+    
+}
+
+.container > div h3{
+    color: white;
+    text-align: left;
+    width: 466px;
+    margin-top: 2vw;
+    font-size: 2rem;
+}
+
+.container > div p{
+    color: white;
+    text-align: left;
+    width: 466px;
+    margin-left: 5px;
+    /* margin-top: 3vh; */
+}
+
+.container > div section{
+    margin-top: 2vh;
+    background:var(--blue-dark);
+    width: 466px;
+    height: 86px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+   
+}
+
+.container > div section input{
+    border: none;
+    outline: none;
+    background: var(--blue-dark);
+    border-radius: 5px;
+    display: flex;
+    flex: 1;
+    margin-left: 10px;
+    color: white;
+
+
+}
+
+.container > div section button{
+    display: flex;
+    background-color: var(--green);
+    border: none;
+    outline: none;
+    
+    border-radius: 5px;
+    margin-right: 20px;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s all ease-in-out;
+}
+
+.container > div section button:hover{
+    opacity: 0.8;
+}
+
+.icon{
+    fill: var(--white);
+    width: 30px;
+    height: 30px;
+}
+
+.git{
+    margin-top: 2vh;
+    width: 466px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
