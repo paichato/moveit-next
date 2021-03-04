@@ -7,6 +7,7 @@ import Cookies from 'js-cookie'
 import { genUser } from "./Hero";
 
 
+
 export function Profile(){
 
     const {level}=useContext(ChallengesContext);
@@ -15,10 +16,10 @@ export function Profile(){
     
     
     return(
-       
+       <LogginProvider>
         <div className={styles.profileContainer}>
             {/* <img src={Cookies.get('name')!=""?Cookies.get('avatar'):guest.avatar_url} alt="Marlon D Jesus"/> */}
-            <img src={Cookies.get("avatar")} alt="Marlon D Jesus"/>
+            <img src={`${Cookies.get('avatar')}`} alt="Marlon D Jesus"/>
             <div>
                 {/* <strong>{Cookies.getJSON('name')!==undefined?Cookies.getJSON('name'):guest.name}</strong> */}
                 <strong>{Cookies.get('name')}</strong>
@@ -27,6 +28,7 @@ export function Profile(){
                     Level {level}</p>
             </div>
         </div>
+        </LogginProvider>
        
        
     )

@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import { api } from "../api";
 import { toast } from "react-toastify";
 import { guest, LogginContext } from "../contexts/LogginContext";
-import Router from "next/router";
+import Router, { useRouter } from "next/router";
 import  Cookies  from "js-cookie";
 interface userProps {
     login: string;
@@ -20,6 +20,8 @@ export function Hero() {
 
   const [gituser, setgituser] = useState("");
   const [input, setinput] = useState("");
+
+    const router=useRouter();
 
   useEffect(() => {
     fazerLogin();
@@ -70,6 +72,8 @@ export function Hero() {
           // logar();
 
           console.log(isLogged);
+          
+          router.replace('/');
         })
         .catch(function (error) {
           setDadosUser(guest) ;
@@ -90,6 +94,8 @@ export function Hero() {
 
           // logar();
           console.log(isLogged);
+
+          router.replace('/');
         })
         .then(function () {
           setinput("");

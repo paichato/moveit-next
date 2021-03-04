@@ -28,14 +28,23 @@ export default function Home(props: HomeProps) {
 
   const [logado, setlogado] = useState(isLogged);
 
+  const {user}=useContext(LogginContext);
   // useEffect(() => {
 
   // }, [isLogged])
   const router = useRouter();
 
   useEffect(() => {
+
+    // if(!user){
+    //   router.push('/Login');
+    //   console.log(user);
+      
+    // }else{
+    //   router.replace('/')
+    // }
    console.log("logado");
-  }, [isLogged]);
+  }, [,isLogged]);
 
   return (
     <>
