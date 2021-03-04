@@ -8,7 +8,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "@types/axios": "^0.14.0",
     "@types/js-cookie": "^2.2.6",
+    "axios": "^0.21.1",
     "js-cookie": "^2.2.1",
     "js-cookies": "^1.0.4",
     "next": "10.0.7",

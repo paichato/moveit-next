@@ -2,20 +2,44 @@ import styles from '../styles/component/Hero.module.css';
 import {BsBoxArrowInRight} from 'react-icons/bs';
 import {AiFillGithub} from 'react-icons/ai';
 import { useState } from 'react';
+import { api } from '../api';
+
+interface userProps{
+    login:String;
+    avatar_url:String;
+    name:String;
+
+}
+
+export let user:userProps ={login:"",avatar_url:"", name:""};
 
 export function Hero(){
 
-    const [gituser, setgituser] = useState(null);
+    const [gituser, setgituser] = useState("");
     const [input, setinput] = useState("");
+    
 
-    function handleSubmitUser(e:React.FormEvent<HTMLFormElement>){
+    async function handleSubmitUser(e:React.FormEvent<HTMLFormElement>){
         e.preventDefault();
+
+        
         if(input===""){
             console.log("insere username ou gitname");
+        }else{
+            setgituser(input);
+           await api.get(`/${gituser}?`)
+                .then(function(response){
+                    user=response.data;
+                    console.log(response.data);
+                    console.log(user.name);
+                }).catch(function(error){
+                    // user="guest";
+                }).then(function(){
+                    setinput("");
+                })
         }
         // setinput(e.currentTarget.value);
-        console.log("submited");
-        console.log(input);
+       
 
     }
 
@@ -33,7 +57,7 @@ um nome aleatorio</p>
                 
                 <section>
                     <form onSubmit={handleSubmitUser}>
-                        <input onChange={(e:React.FormEvent<HTMLInputElement>)=>{setinput(e.currentTarget.value)}} value={gituser} type="text" name="username" id="" className={styles.input}/>
+                        <input onChange={(e:React.FormEvent<HTMLInputElement>)=>{setinput(e.currentTarget.value)}} value={input} type="text" name="username" id="" className={styles.input}/>
                         <button type="submit" ><BsBoxArrowInRight className={styles.icon}/></button>
                     </form>
                 </section>
