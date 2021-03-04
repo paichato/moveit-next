@@ -11,9 +11,9 @@ export function Profile(){
 
     return(
         <div className={styles.profileContainer}>
-            <img src={`https://github.com/${user}.png`} alt="Marlon D Jesus"/>
+            <img src={user.avatar_url} alt="Marlon D Jesus"/>
             <div>
-                <strong>Marlon D Jesus</strong>
+                <strong>{user.name}</strong>
                 <p>
                     <img src="icons/level.svg" alt="Level"/>
                     Level {level}</p>

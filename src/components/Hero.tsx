@@ -5,9 +5,9 @@ import { useState } from 'react';
 import { api } from '../api';
 
 interface userProps{
-    login:String;
-    avatar_url:String;
-    name:String;
+    login:string;
+    avatar_url:string;
+    name:string;
 
 }
 
