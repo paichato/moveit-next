@@ -12,7 +12,7 @@ import { ChallengesProvider } from "../contexts/ChallengeContext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import { LogginContext, LogginProvider } from "../contexts/LogginContext";
+import { LogginContext, LogginProvider, user } from "../contexts/LogginContext";
 import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -28,23 +28,10 @@ export default function Home(props: HomeProps) {
 
   const [logado, setlogado] = useState(isLogged);
 
-  const {user}=useContext(LogginContext);
-  // useEffect(() => {
-
-  // }, [isLogged])
+  
   const router = useRouter();
 
-  useEffect(() => {
-
-    // if(!user){
-    //   router.push('/Login');
-    //   console.log(user);
-      
-    // }else{
-    //   router.replace('/')
-    // }
-   console.log("logado");
-  }, [,isLogged]);
+  
 
   return (
     <>
@@ -70,7 +57,7 @@ export default function Home(props: HomeProps) {
         
 
       
-        <LogginProvider>
+        <LogginProvider >
          <div className={styles.container}>
             <Head>
               <title>Inicio | move.it</title>
@@ -107,6 +94,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
       level: Number(level),
       currentXp: Number(currentXp),
       challengesCompleted: Number(challengesCompleted),
+      
     },
   };
 };

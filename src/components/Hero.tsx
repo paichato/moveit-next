@@ -4,7 +4,7 @@ import { AiFillGithub } from "react-icons/ai";
 import { useContext, useEffect, useState } from "react";
 import { api } from "../api";
 import { toast } from "react-toastify";
-import { guest, LogginContext } from "../contexts/LogginContext";
+import { guest, LogginContext, user } from "../contexts/LogginContext";
 import Router, { useRouter } from "next/router";
 import  Cookies  from "js-cookie";
 interface userProps {
@@ -16,7 +16,7 @@ interface userProps {
 export let genUser:userProps={login:"",avatar_url:"",name:""};
 
 export function Hero() {
-  const { isLogged, fazerLogin, user, setDadosUser } = useContext(LogginContext);
+  const { isLogged, fazerLogin, setDadosUser } = useContext(LogginContext);
 
   const [gituser, setgituser] = useState("");
   const [input, setinput] = useState("");
