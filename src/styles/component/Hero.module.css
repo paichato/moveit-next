@@ -48,7 +48,7 @@
 }
 
 .container > div section{
-    margin-top: 2vh;
+    margin-top: 3vh;
     background:var(--blue-dark);
     width: 466px;
     height: 86px;
@@ -60,7 +60,13 @@
    
 }
 
-.container > div section input{
+.container > div section form{
+    display: flex;
+    justify-content: center;
+    width: 466px;
+}
+
+.input{
     border: none;
     outline: none;
     background: var(--blue-dark);
