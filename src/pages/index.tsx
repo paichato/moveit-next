@@ -8,9 +8,10 @@ import { ChallengeBox } from "../components/ChallengeBox";
 import { CountdownProvider } from "../contexts/CountdownContext";
 import { GetServerSideProps } from "next";
 import { ChallengesProvider } from "../contexts/ChallengeContext";
-import { Hero, user } from "../components/Hero";
+
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 import { LogginContext, LogginProvider } from "../contexts/LogginContext";
 import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
@@ -60,7 +61,7 @@ export default function Home(props: HomeProps) {
         
 
       
-        
+        <LogginProvider>
          <div className={styles.container}>
             <Head>
               <title>Inicio | move.it</title>
@@ -81,7 +82,7 @@ export default function Home(props: HomeProps) {
               </section>
             </CountdownProvider>
           </div>
-         
+          </LogginProvider>
          )
         </ChallengesProvider>
      
