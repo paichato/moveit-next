@@ -28,9 +28,11 @@ export function Hero(){
     const [gituser, setgituser] = useState("");
     const [input, setinput] = useState("");
 
-    // useEffect(() => {
-    //     fazerLogin();
-    // }, [user])
+
+    
+    useEffect(() => {
+        fazerLogin();
+    }, [user])
     
 
     async function handleSubmitUser(e:React.FormEvent<HTMLFormElement>){
@@ -74,6 +76,7 @@ export function Hero(){
                 }).catch(function(error){
                     user=guest;
                     user.login=input;
+                    console.log(error);
 
                     toast.error(`⚠ Entrando como ${user.login} {guest}`, {
                         position: "bottom-left",
@@ -94,7 +97,7 @@ export function Hero(){
                     setinput("");
                 })
         }
-        // setinput(e.currentTarget.value);
+    
        
 
     }

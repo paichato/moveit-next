@@ -11,7 +11,7 @@ import { ChallengesProvider } from "../contexts/ChallengeContext";
 import { Hero,  user } from "../components/Hero";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import { LogginContext } from "../contexts/LogginContext";
+import { LogginContext, LogginProvider } from "../contexts/LogginContext";
 import { useContext } from "react";
 
 interface HomeProps{
@@ -26,6 +26,8 @@ export default function Home(props:HomeProps) {
 
   const { isLogged } = useContext(LogginContext);
   return (
+    <>
+    <LogginProvider  >
     <ChallengesProvider level={props.level} currentXp={props.currentXp} challengesCompleted={props.challengesCompleted}>
      
      <ToastContainer
@@ -65,7 +67,8 @@ export default function Home(props:HomeProps) {
   </div> ):(<Hero/>)}
      
   </ChallengesProvider>
-    
+  </LogginProvider>
+    </>
   )
 }
 
