@@ -25,6 +25,11 @@ interface HomeProps{
 export default function Home(props:HomeProps) {
 
   const { isLogged } = useContext(LogginContext);
+  
+  // useEffect(() => {
+    
+  // }, [isLogged])
+
   return (
     <>
     <LogginProvider  >
