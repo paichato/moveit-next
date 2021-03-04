@@ -1,10 +1,11 @@
 import styles from '../styles/component/Hero.module.css';
 import {BsBoxArrowInRight} from 'react-icons/bs';
 import {AiFillGithub} from 'react-icons/ai';
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { api } from '../api';
-import { toast, ToastContainer } from 'react-toastify';
-import { Toast } from 'react-toastify/dist/components';
+import { toast} from 'react-toastify';
+import { LogginContext } from '../contexts/LogginContext';
+
 
 interface userProps{
     login:string;
@@ -12,14 +13,24 @@ interface userProps{
     name:string;
 
 }
+
+
 export const guest:userProps={login:"guest", avatar_url:"https://upload.wikimedia.org/wikipedia/commons/e/e1/Strawberries.jpg",name:"guest user"}
 
 export let user:userProps ={login:"",avatar_url:"", name:""};
 
+
+
 export function Hero(){
+
+    const { isLogged, fazerLogin } = useContext(LogginContext);
 
     const [gituser, setgituser] = useState("");
     const [input, setinput] = useState("");
+
+    // useEffect(() => {
+    //     fazerLogin();
+    // }, [user])
     
 
     async function handleSubmitUser(e:React.FormEvent<HTMLFormElement>){
@@ -55,6 +66,11 @@ export function Hero(){
 
                     console.log(response.data);
                     console.log(user.name);
+
+                    // logar();
+
+                    console.log(isLogged);
+
                 }).catch(function(error){
                     user=guest;
                     user.login=input;
@@ -70,6 +86,10 @@ export function Hero(){
                         });
 
                     console.log(user.name);
+
+                    // logar();
+                    console.log(isLogged);
+
                 }).then(function(){
                     setinput("");
                 })

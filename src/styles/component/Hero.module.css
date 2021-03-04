@@ -6,6 +6,8 @@
     background: var(--blue);
 }
 
+
+
 .container > img{
     position: absolute;
     z-index: 0;

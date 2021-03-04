@@ -8,9 +8,11 @@ import { ChallengeBox } from "../components/ChallengeBox";
 import { CountdownProvider } from "../contexts/CountdownContext";
 import {GetServerSideProps} from 'next'
 import { ChallengesProvider } from "../contexts/ChallengeContext";
-import { Hero } from "../components/Hero";
+import { Hero,  user } from "../components/Hero";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { LogginContext } from "../contexts/LogginContext";
+import { useContext } from "react";
 
 interface HomeProps{
   level:number;
@@ -21,9 +23,11 @@ interface HomeProps{
 
 
 export default function Home(props:HomeProps) {
+
+  const { isLogged } = useContext(LogginContext);
   return (
     <ChallengesProvider level={props.level} currentXp={props.currentXp} challengesCompleted={props.challengesCompleted}>
-     <Hero/>
+     
      <ToastContainer
                 position="top-center"
                 autoClose={5000}
@@ -35,7 +39,8 @@ export default function Home(props:HomeProps) {
                 draggable
                 pauseOnHover
                 />
-    {/* <div className={styles.container}>
+
+        {isLogged?(<div className={styles.container}>
      <Head>
        <title>
          Inicio | move.it
@@ -57,7 +62,8 @@ export default function Home(props:HomeProps) {
         </div>
       </section>
     </CountdownProvider>
-  </div> */}
+  </div> ):(<Hero/>)}
+     
   </ChallengesProvider>
     
   )
