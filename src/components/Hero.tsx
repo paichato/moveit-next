@@ -3,6 +3,8 @@ import {BsBoxArrowInRight} from 'react-icons/bs';
 import {AiFillGithub} from 'react-icons/ai';
 import { useState } from 'react';
 import { api } from '../api';
+import { toast, ToastContainer } from 'react-toastify';
+import { Toast } from 'react-toastify/dist/components';
 
 interface userProps{
     login:string;
@@ -10,6 +12,7 @@ interface userProps{
     name:string;
 
 }
+export const guest:userProps={login:"guest", avatar_url:"https://upload.wikimedia.org/wikipedia/commons/e/e1/Strawberries.jpg",name:"guest user"}
 
 export let user:userProps ={login:"",avatar_url:"", name:""};
 
@@ -25,15 +28,48 @@ export function Hero(){
         
         if(input===""){
             console.log("insere username ou gitname");
+            toast.dark('❌ Insere username ou gitname!', {
+                position: "bottom-left",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                });
         }else{
             setgituser(input);
-           await api.get(`/${gituser}?`)
+           await api.get(`/${input}?`)
                 .then(function(response){
                     user=response.data;
+
+                    toast.success('✅Usuario encontrado -> logando...', {
+                        position: "bottom-left",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        });
+
                     console.log(response.data);
                     console.log(user.name);
                 }).catch(function(error){
-                    // user="guest";
+                    user=guest;
+                    user.login=input;
+
+                    toast.error(`⚠ Entrando como ${user.login} {guest}`, {
+                        position: "bottom-left",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        });
+
+                    console.log(user.name);
                 }).then(function(){
                     setinput("");
                 })
@@ -45,6 +81,7 @@ export function Hero(){
 
     return(
         <div className={styles.container} >
+            
             <img src="movit-hero-bg.png" alt="background moveit"/>
             <div>
                 <img src="Moveit-bg.png" alt="" />
@@ -64,6 +101,7 @@ um nome aleatorio</p>
                 
 
             </div>
+            
         </div>
     )
 }

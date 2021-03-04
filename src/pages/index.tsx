@@ -9,6 +9,8 @@ import { CountdownProvider } from "../contexts/CountdownContext";
 import {GetServerSideProps} from 'next'
 import { ChallengesProvider } from "../contexts/ChallengeContext";
 import { Hero } from "../components/Hero";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 interface HomeProps{
   level:number;
@@ -22,6 +24,17 @@ export default function Home(props:HomeProps) {
   return (
     <ChallengesProvider level={props.level} currentXp={props.currentXp} challengesCompleted={props.challengesCompleted}>
      <Hero/>
+     <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                />
     {/* <div className={styles.container}>
      <Head>
        <title>
