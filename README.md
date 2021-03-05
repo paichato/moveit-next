@@ -1,5 +1,8 @@
-![banner](https://github.com/rocketseat-education/nlw-04-reactjs/blob/main/.github/logo.png)
+![banner](https://github.com/rocketseat-education/nlw-04-reactjs/blob/main/.github/logo.png)</br></br>
+<a href="#visual">Preview</a> | <a href="#htrun">How to run</a> | <a href="#dep">Dependencies</a> | <a href="#feat">Features</a>
 ---------
+![gif](https://github.com/paichato/moveit-next/blob/main/move-it%20previews/Moveit-gif.gif)
+------
 # Move.it 💻
 Move.it is an app that combines Pomodoro's technique with physical exercises for those who spend a lot of time in front of the computer.</br> </br>
 > O move.it é um app que une a técnica de Pomodoro com a realização de exercícios físicos para quem passa muito tempo na frente do computador.
@@ -12,6 +15,7 @@ This project was developed with the following technologies
 - Next.js 
 - TypeScript
 
+<div id="visual"></div>
 
 ## What the app looks like/ Aparencia da aplicacao 🙈
 
@@ -23,6 +27,7 @@ This project was developed with the following technologies
 
 --- 
 
+<div id="htrun"></div>
 
 ## How to run the app/ Como executar o aplicativo 🚀
 1. Either click on the link on the right panel or fork/download the app and open the folder in the CLI
@@ -53,6 +58,8 @@ Users should be able to:
 - Abandon cycle
 
 
+<div id="feat"></div>
+
 ## Features 💎
 > Grab user name and photo through gitname
 > Interactive Countdown
@@ -61,11 +68,13 @@ Users should be able to:
 
 
 
-    
+
+<div id="dep"></div>
+
 ## Dependecies 💾
 [react](https://github.com/facebook/react)|nextjs|cookie-js
 ---|---|---
-typescript|vercel|-
+typescript|vercel|react-icons
 
 ## Why
 This project is part of my personall portfolio. It was built based on [Rocketseat](https://github.com/rocketseat-education)design.<br/>
