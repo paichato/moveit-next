@@ -67,6 +67,7 @@ export function ChallengesProvider({
     const randomChallengeIndex = Math.floor(Math.random() * challenges.length);
     const challenge = challenges[randomChallengeIndex];
     setactiveChallenge(challenge);
+    
 
     new Audio("/notification.mp3").play();
     if (Notification.permission === "granted") {
