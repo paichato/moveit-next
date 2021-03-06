@@ -1,7 +1,7 @@
-import { HookCallbacks } from "async_hooks";
-import { createContext, ReactNode, SetStateAction, useContext, useEffect, useState } from "react";
+
+import { createContext, ReactNode, useEffect, useState } from "react";
 import Cookies from 'js-cookie'
-import { genUser } from "../components/Hero";
+
 
 
 interface LogginContextData {
@@ -49,7 +49,7 @@ useEffect(() => {
       Cookies.set("name", String(user.name));
     Cookies.set("login", String(user.login));
     Cookies.set("avatar",String(user.avatar_url));
-    console.log(Cookies.get('avatar'));
+  
         }
  
  

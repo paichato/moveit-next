@@ -12,9 +12,9 @@ import { ChallengesProvider } from "../contexts/ChallengeContext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import { LogginContext, LogginProvider, user } from "../contexts/LogginContext";
-import { useContext, useEffect, useState } from "react";
-import Link from "next/link";
+import { LogginContext, LogginProvider} from "../contexts/LogginContext";
+import { useContext,useState } from "react";
+
 import { useRouter } from "next/router";
 
 interface HomeProps {
@@ -57,7 +57,7 @@ export default function Home(props: HomeProps) {
         
 
       
-        <LogginProvider >
+       
          <div className={styles.container}>
             <Head>
               <title>Inicio | move.it</title>
@@ -78,7 +78,7 @@ export default function Home(props: HomeProps) {
               </section>
             </CountdownProvider>
           </div>
-          </LogginProvider>
+         
          )
         </ChallengesProvider>
      

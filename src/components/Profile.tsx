@@ -1,10 +1,9 @@
-import Head from "next/head";
+
 import { useContext, useEffect, useState } from "react";
 import { ChallengesContext } from "../contexts/ChallengeContext";
-import { LogginContext, LogginProvider, user } from "../contexts/LogginContext";
+import {  LogginProvider} from "../contexts/LogginContext";
 import styles from "../styles/component/Profile.module.css";
 import Cookies from "js-cookie";
-import { genUser } from "./Hero";
 import { GetServerSideProps } from "next";
 
 export function Profile() {

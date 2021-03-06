@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import { api } from "../api";
 import { toast } from "react-toastify";
 import { guest, LogginContext, user } from "../contexts/LogginContext";
-import Router, { useRouter } from "next/router";
+import  { useRouter } from "next/router";
 import  Cookies  from "js-cookie";
 interface userProps {
     login: string;
@@ -25,10 +25,6 @@ export function Hero() {
 
   useEffect(() => {
     fazerLogin();
-
-    
-      
-    
 
   }, [setDadosUser]);
 
