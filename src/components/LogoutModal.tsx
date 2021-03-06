@@ -1,4 +1,4 @@
-import {GiConfirmed, GiCancel} from 'react-icons/gi';
+import {GiExitDoor, GiCancel} from 'react-icons/gi';
 import styles from '../styles/component/LogoutModal.module.css'
 
 
@@ -7,9 +7,9 @@ export function LogoutModal(){
         <div className={styles.overlay}>
             <div className={styles.container}>
                 <header>Sair</header>
-                <strong>Tem certeza que deseja sair</strong>
+                <strong>Tem certeza que deseja sair?</strong>
                 <section>
-                <button><GiConfirmed/></button>
+                <button><GiExitDoor/></button>
                 <button><GiCancel/></button>
                 </section>
             </div>

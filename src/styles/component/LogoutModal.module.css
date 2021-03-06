@@ -21,11 +21,88 @@
     box-shadow: 0 0 60px rgba(0,0,0,0.05);
     text-align: center;
     position: relative;
+    border-radius: 10px;
 }
 
 .container header{
-    font-size: 8.75rem;
+    font-size: 2.75rem;
     font-weight: 600;
     color: var(--blue);
+    margin-bottom: 1rem;
+    
+}
+
+.container strong{
+    font-size: 1.25rem;
+    color: var(--title);
+    
+}
+
+.container section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.container button{
+    width: 5.5rem;
+    height: 4.5rem;
+    border-radius: 8px;
+    border:none;
+    background: none;
+    /* opacity: 0.8; */
+    transition: 0.2s all ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 0, 200, 0.2);
+    /* display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; */
+    /* font-size: 1.75rem; */
+
+}
+
+
+.container button:hover{
+    opacity: 1;
+    background: var(--blue);
+}
+
+.container button:last-child{
+    background: transparent;
+    border: none;
+    /* border: 2px solid var(--red); */
+    box-shadow: 0 0 10px rgba(200, 0, 0, 0.2);
+}
+
+
+
+.container svg{
+    width: 2.25rem;
+    height: 2.25rem;
+    fill: var(--title);
+    transition: 0.2s all ease-in-out;
+    
+}
+
+.container button:hover svg{
+    fill: var(--white);
+}
+
+
+
+.container section button:last-child svg{
+    fill: var(--red);
+}
+
+.container section button:last-child:hover {
+    background: var(--red);
+    
+}
+
+.container section button:last-child:hover svg {
+    fill: var(--white);
     
 }
