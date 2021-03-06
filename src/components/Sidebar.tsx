@@ -11,6 +11,27 @@ import { Button } from "@chakra-ui/button";
 import {FaHourglassStart} from 'react-icons/fa'
 import {BsClockHistory} from 'react-icons/bs';
 import {GiClockwork} from 'react-icons/gi';
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+
+
+const theme = extendTheme({
+    styles: {
+      global: (props) => ({
+        "html, body": {
+            fontFamily: "Inter",
+            color: props.colorMode === "dark" ? "white" : "var(--text)",
+            background:props.colorMode === "dark"? "white": "var(--background)",
+            lineHeight: "tall",
+        },
+        a: {
+          color: props.colorMode === "dark" ? "teal.300" : "var(--white)",
+        },
+        svg:{
+            fill:"var(--white)",
+        }
+      }),
+    },
+  })
 
 export function Sidebar() {
   const router = useRouter();
@@ -43,6 +64,7 @@ export function Sidebar() {
         </button  >
    
    <button style={{background:"var(--blue)"}}>
+       <ChakraProvider theme={theme}>
         <Menu isLazy placement="left" >
           <MenuButton as={Button} style={{ background: "var(--blue)", alignItems:"center", justifyContent:"center", display:"flex" }}>
             <IoMdOptions />
@@ -56,6 +78,7 @@ export function Sidebar() {
            
           </MenuList>
         </Menu>
+        </ChakraProvider>
         </button>
         <button>
           <FiShare2 />

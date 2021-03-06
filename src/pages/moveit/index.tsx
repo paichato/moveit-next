@@ -18,12 +18,22 @@ import { useContext } from "react";
 import { useRouter } from "next/router";
 import { Sidebar } from "../../components/Sidebar";
 import { LogoutProvider } from "../../contexts/LogoutContext";
+import { ChakraProvider, CSSReset } from "@chakra-ui/react";
+import { extendTheme } from "@chakra-ui/react"
+
 
 interface HomeProps {
   level: number;
   currentXp: number;
   challengesCompleted: number;
 }
+
+// const font = {
+//   fonts: {font:"Inter"}
+
+// }
+
+// const theme= extendTheme({font})
 
 export default function Home(props: HomeProps) {
   const { isLogged } = useContext(LogginContext);
@@ -58,8 +68,10 @@ export default function Home(props: HomeProps) {
        
             
         <LogoutProvider>
-
+      
+       
        <Sidebar/>
+       
        
          <div className={styles.container}>
              
