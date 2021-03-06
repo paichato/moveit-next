@@ -1,7 +1,7 @@
 <div id="top"></div>
 
 ![banner](https://github.com/rocketseat-education/nlw-04-reactjs/blob/main/.github/logo.png)</br></br>
-### <a href="#visual">Preview</a> | <a href="#htrun">How to run</a> | <a href="#dep">Dependencies</a> | <a href="#feat">Features</a></br>
+### <a href="#visual">Preview👀</a> | <a href="#htrun">How to run🔧</a> | <a href="#dep">Dependencies➕</a> | <a href="#feat">Features🌟</a> | [LIVE-DEMO](https://moveit-next-iymomt6wm-paichato.vercel.app/)🚀</br>
 
 
 
