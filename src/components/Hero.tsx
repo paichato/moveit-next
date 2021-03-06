@@ -28,6 +28,14 @@ export function Hero() {
 
   }, [setDadosUser]);
 
+  useEffect(() => {
+
+    //to check if user is logged or not, if logged prevent from going to login
+    if(Cookies.get('login')){
+      router.replace('/moveit')
+    }
+  }, [])
+
   async function handleSubmitUser(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
