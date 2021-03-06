@@ -16,6 +16,7 @@ import { LogginContext} from "../../contexts/LogginContext";
 import { useContext } from "react";
 
 import { useRouter } from "next/router";
+import { Sidebar } from "../../components/Sidebar";
 
 interface HomeProps {
   level: number;
@@ -56,9 +57,10 @@ export default function Home(props: HomeProps) {
             
         
 
-      
+       <Sidebar/>
        
          <div className={styles.container}>
+             
             <Head>
               <title>Inicio | move.it</title>
             </Head>
