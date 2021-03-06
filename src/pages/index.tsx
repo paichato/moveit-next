@@ -1,8 +1,7 @@
-import { useRouter } from "next/router";
-import { useContext } from "react";
+
 import { ToastContainer } from "react-toastify";
 import { Hero } from "../components/Hero";
-import {  LogginContext, LogginProvider } from "../contexts/LogginContext";
+import {  LogginProvider } from "../contexts/LogginContext";
 
 
 import "react-toastify/dist/ReactToastify.css";
@@ -10,8 +9,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 export default function Login() {
 
-    const {isLogged}=useContext(LogginContext);
-    const router=useRouter();
 
     
 
