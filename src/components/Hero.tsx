@@ -69,7 +69,7 @@ export function Hero() {
 
           console.log(isLogged);
           
-          router.replace('/');
+          router.replace('/moveit');
         })
         .catch(function (error) {
           setDadosUser(guest) ;
@@ -91,7 +91,7 @@ export function Hero() {
           // logar();
           console.log(isLogged);
 
-          router.replace('/');
+          router.replace('/moveit');
         })
         .then(function () {
           setinput("");
