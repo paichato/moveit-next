@@ -17,23 +17,28 @@
     border-radius: 5px;
     font-size: 8.5rem;
     text-align:center;
+    transition: 0.2s all ease-in-out;
 
 }
 
 .countdownContainer > div span{
     flex: 1;
+    transition: 0.2s all ease-in-out;
 }
 .countdownContainer > div span:first-child{
     border-right: 1px solid #f0f1f3;
+    transition: 0.2s all ease-in-out;
 }
 
 .countdownContainer > div span:first-last{
     border-left: 1px solid #f0f1f3;
+    transition: 0.2s all ease-in-out;
 }
 
 .countdownContainer > span{
     font-size: 6.25rem;
     margin: 0 0.5rem;
+    transition: 0.2s all ease-in-out;
 }
 
 .countdownButon{

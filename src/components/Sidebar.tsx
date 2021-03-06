@@ -10,6 +10,7 @@ import { Menu, MenuButton, MenuDivider, MenuItem, MenuList } from "@chakra-ui/me
 import { Button } from "@chakra-ui/button";
 import {FaHourglassStart} from 'react-icons/fa'
 import {BsClockHistory} from 'react-icons/bs';
+import {BiShare} from 'react-icons/bi';
 import {GiClockwork} from 'react-icons/gi';
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { CountdownContext, CountdownProvider } from "../contexts/CountdownContext";
@@ -97,7 +98,7 @@ export function Sidebar() {
         </ChakraProvider>
         </button>
         <button>
-          <FiShare2 />
+          <BiShare />
         </button>
       </div>
     </>
