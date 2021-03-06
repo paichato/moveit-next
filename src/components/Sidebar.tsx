@@ -15,6 +15,17 @@ export function Sidebar(){
         //if no -> close modal
     }
 
+    function handleConfig(){
+        //prompt config modal to choose time
+        //if choosen switch time 
+    }
+
+    function handleShare(){
+        //prompt option to save data into pdf 
+        //|| share score to social media
+        //
+    }
+
     return(
         <>
         <div className={styles.container}>
