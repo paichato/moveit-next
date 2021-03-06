@@ -1,5 +1,10 @@
+<div id="top"></div>
+
 ![banner](https://github.com/rocketseat-education/nlw-04-reactjs/blob/main/.github/logo.png)</br></br>
-<a href="#visual">Preview</a> | <a href="#htrun">How to run</a> | <a href="#dep">Dependencies</a> | <a href="#feat">Features</a>
+### <a href="#visual">Preview</a> | <a href="#htrun">How to run</a> | <a href="#dep">Dependencies</a> | <a href="#feat">Features</a></br>
+
+
+
 ---------
 ![gif](https://github.com/paichato/moveit-next/blob/main/move-it%20previews/Moveit-gif.gif)
 ------
@@ -95,3 +100,6 @@ UI/UX credits: [Rocketseat](https://github.com/rocketseat-education)
 
 
 <a href='https://ko-fi.com/D1D63F21Y' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi2.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a> | 
+-------
+<a href="#top">🔝Top</a>|<a href="#visual">Preview⬆</a>|<a href="#htrun">How to run⬆</a>|<a href="#dep">Dependencies⬆</a>|<a href="#feat">Features⬆</a>
+---|---|---|---|---
