@@ -18,6 +18,7 @@ import { useContext } from "react";
 import { useRouter } from "next/router";
 import { Sidebar } from "../../components/Sidebar";
 import { LogoutModal } from "../../components/LogoutModal";
+import { LogoutProvider } from "../../contexts/LogoutContext";
 
 interface HomeProps {
   level: number;
@@ -56,8 +57,8 @@ export default function Home(props: HomeProps) {
           />
        
             
-        
-<LogoutModal/>
+        <LogoutProvider>
+{/* <LogoutModal/> */}
        <Sidebar/>
        
          <div className={styles.container}>
@@ -83,6 +84,7 @@ export default function Home(props: HomeProps) {
           </div>
          
          )
+         </LogoutProvider>
         </ChallengesProvider>
      
     </>
