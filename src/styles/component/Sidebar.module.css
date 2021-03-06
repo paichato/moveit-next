@@ -1,7 +1,7 @@
 .container{
     position: fixed;
     width: 10rem;
-    min-height: 50vh;
+    min-height: 65vh;
     left: 90%;
     background: var(--blue-dark);
     display: flex;
@@ -11,7 +11,7 @@
     box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.2);
     /* opacity: 0.8; */
     z-index: 2;
-    margin-top: 14rem;
+    margin-top: 11rem;
 }
 
 .container > button{
@@ -49,4 +49,8 @@
     width: 2rem;
     height: 2rem;
     fill: var(--white);
+}
+
+.colormode:hover{
+    background: #242424;
 }
