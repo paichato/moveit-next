@@ -30,6 +30,12 @@
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
 } 
 
+.container button > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .container > button:last-child{
     background: var(--blue);
     fill: white;

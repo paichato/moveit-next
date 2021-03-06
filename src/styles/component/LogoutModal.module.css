@@ -12,7 +12,7 @@
     z-index: 90;
 }
 
-.container{
+.Logcontainer{
     background: var(--white);
     width: 100%;
     max-width: 400px;
@@ -24,7 +24,7 @@
     border-radius: 10px;
 }
 
-.container header{
+.Logcontainer header{
     font-size: 2.75rem;
     font-weight: 600;
     color: var(--blue);
@@ -32,13 +32,13 @@
     
 }
 
-.container strong{
+.Logcontainer strong{
     font-size: 1.25rem;
     color: var(--title);
     
 }
 
-.container section{
+.Logcontainer section{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -47,7 +47,7 @@
     padding: 1rem;
 }
 
-.container button{
+.Logcontainer button{
     width: 5.5rem;
     height: 4.5rem;
     border-radius: 8px;
@@ -61,16 +61,19 @@
     justify-content: center;
     align-items: center; */
     /* font-size: 1.75rem; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 
 
-.container button:hover{
+.Logcontainer button:hover{
     opacity: 1;
     background: var(--blue);
 }
 
-.container button:last-child{
+.Logcontainer button:last-child{
     background: transparent;
     border: none;
     /* border: 2px solid var(--red); */
@@ -79,7 +82,7 @@
 
 
 
-.container svg{
+.Logcontainer svg{
     width: 2.25rem;
     height: 2.25rem;
     fill: var(--title);
@@ -87,22 +90,22 @@
     
 }
 
-.container button:hover svg{
+.Logcontainer button:hover svg{
     fill: var(--white);
 }
 
 
 
-.container section button:last-child svg{
+.Logcontainer section button:last-child svg{
     fill: var(--red);
 }
 
-.container section button:last-child:hover {
+.Logcontainer section button:last-child:hover {
     background: var(--red);
     
 }
 
-.container section button:last-child:hover svg {
+.Logcontainer section button:last-child:hover svg {
     fill: var(--white);
     
 }

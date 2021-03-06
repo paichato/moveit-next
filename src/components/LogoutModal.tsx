@@ -32,7 +32,7 @@ export function LogoutModal(){
 
     return(
         <div className={styles.overlay}>
-            <div className={styles.container}>
+            <div className={styles.Logcontainer}>
                 <header>Sair</header>
                 <strong>Tem certeza que deseja sair?</strong>
                 <section>
