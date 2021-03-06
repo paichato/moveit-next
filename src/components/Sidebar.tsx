@@ -13,6 +13,8 @@ export function Sidebar(){
         //prompt confirmation modal
         //if yes -> remove cookies && router.push('/')
         //if no -> close modal
+
+        
     }
 
     function handleConfig(){
