@@ -18,6 +18,7 @@ interface CountdownContextData {
   isActive: boolean;
   startCountdown: () => void;
   resetCountdown: () => void;
+  setCTime:(value:Number)=>void;
 }
 
 interface CountdownProviderProps {
@@ -47,6 +48,37 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
     settime(25 * 60);
   }
 
+  function setCTime(value:any){
+    switch (value) {
+      case 0:
+        clearTimeout(countdownTimeout);
+        setIsActive(false);
+        sethasfinished(false);
+        settime(25*0.2);
+        console.log('0-0');
+        break;
+
+        case 1:
+          clearTimeout(countdownTimeout);
+          setIsActive(false);
+          sethasfinished(false);
+          settime(25*60);
+          console.log('1');
+          break;
+
+        case 2:
+          clearTimeout(countdownTimeout);
+        setIsActive(false);
+        sethasfinished(false);
+        settime(60*60);
+        console.log('2');
+        break;
+    
+      default:
+        break;
+    }
+  }
+
   useEffect(() => {
     if (isActive && time > 0) {
       countdownTimeout = setTimeout(() => {
@@ -68,6 +100,7 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
         isActive,
         startCountdown,
         resetCountdown,
+        setCTime
       }}
     >
       {children}

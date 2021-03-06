@@ -69,33 +69,33 @@ export default function Home(props: HomeProps) {
             
         <LogoutProvider>
       
-       
-       <Sidebar/>
-       
-       
-         <div className={styles.container}>
-             
-            <Head>
-              <title>Inicio | move.it</title>
-            </Head>
+        <CountdownProvider>
+          <Sidebar/>
+          
+          
+            <div className={styles.container}>
+                
+                <Head>
+                  <title>Inicio | move.it</title>
+                </Head>
 
-            <ExperienceBar />
+                <ExperienceBar />
 
-            <CountdownProvider>
-              <section>
-                <div>
-                  <Profile />
-                  <CompletedChallenges />
-                  <Countdown />
-                </div>
-                <div>
-                  <ChallengeBox />
-                </div>
-              </section>
-            </CountdownProvider>
-          </div>
-         
-         )
+                
+                  <section>
+                    <div>
+                      <Profile />
+                      <CompletedChallenges />
+                      <Countdown />
+                    </div>
+                    <div>
+                      <ChallengeBox />
+                    </div>
+                  </section>
+                
+              </div>
+              </CountdownProvider>
+            )
          </LogoutProvider>
         </ChallengesProvider>
      
