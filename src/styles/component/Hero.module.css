@@ -9,11 +9,12 @@
 
 
 .container > img{
-    position: absolute;
+    position: fixed;
     z-index: 0;
     /* background-position: top center; */
     margin: 0 28.9vw;
     height: 100%;
+    background-size: contain;
     
     
 }
