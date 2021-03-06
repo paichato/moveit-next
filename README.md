@@ -9,9 +9,9 @@
 
 
 ---------
-![gif](https://github.com/paichato/moveit-next/blob/main/move-it%20previews/Moveit-gif.gif)
+![gif](https://github.com/paichato/moveit-next/blob/main/move-it%20previews/moveit-gif-02.gif)
 ------
-# Move.it 💻
+# Move.it 2.0 💻
 Move.it is an app that combines Pomodoro's technique with physical exercises for those who spend a lot of time in front of the computer.</br> </br>
 > O move.it é um app que une a técnica de Pomodoro com a realização de exercícios físicos para quem passa muito tempo na frente do computador.
 
@@ -54,7 +54,9 @@ This project was developed with the following technologies
 3. Start your cycle
 4. Click on "Completei" if you have accomplished the challenge
 5. If you didnt accomplish click on "Falhei" and start the Cycle again
-br/><br/><br/>
+6. `*NEW*` Choose cycle method on sidebar
+7. `*NEW*` Logout
+<br/><br/>
 
 
 ## User stories
@@ -64,6 +66,9 @@ Users should be able to:
 - Level up accomplishing challenges
 - View their current XP and how many XP they need to level up
 - Abandon cycle
+> - `**NEW**` Choose Cycle method
+> - `**NEW**` Logout
+
 
 
 <div id="feat"></div>
@@ -72,7 +77,9 @@ Users should be able to:
 > Grab user name and photo through gitname
 > Interactive Countdown
 > Notification and sound for each challenge completed
-
+> - `*NEW*` Sidebar
+> - `*NEW*` Cycle methods
+> - `*NEW*` Logout 
 
 
 
@@ -80,9 +87,9 @@ Users should be able to:
 <div id="dep"></div>
 
 ## Dependecies 💾
-[react](https://github.com/facebook/react)|nextjs|cookie-js
----|---|---
-typescript|vercel|react-icons
+[react](https://github.com/facebook/react)|nextjs|cookie-js|axios
+---|---|---|---
+typescript|vercel|react-icons|Chakra
 
 ## Why
 This project is part of my personall portfolio. It was built based on [Rocketseat](https://github.com/rocketseat-education)design.<br/>
@@ -97,6 +104,8 @@ UI/UX credits: [Rocketseat](https://github.com/rocketseat-education)
 - Choose Language
 - CountDown Options
 - Dark Mode
+- Save data to server
+
 
 ---
 
