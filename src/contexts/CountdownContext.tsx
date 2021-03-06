@@ -1,3 +1,4 @@
+
 import {
   Children,
   createContext,
@@ -51,7 +52,7 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
       countdownTimeout = setTimeout(() => {
         settime(time - 1);
       }, 1000);
-    } else if (isActive && time === 0) {
+    } else if (isActive && time == 0) {
       sethasfinished(true);
       setIsActive(false);
       startNewChallenge();

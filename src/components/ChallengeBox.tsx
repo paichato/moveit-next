@@ -27,8 +27,8 @@ return(
                     <p>{activeChallenge.description}</p>
                 </main>
                 <footer>
-                    <button type="button" className={styles.challengeFailedButton} onClick={resetChallenge}>Falhei</button>
-                    <button type="button" className={styles.challengeSucceededButton} onClick={completeChallenge}>Completei</button>
+                    <button type="button" className={styles.challengeFailedButton} onClick={handleChallengeFailed}>Falhei</button>
+                    <button type="button" className={styles.challengeSucceededButton} onClick={handleChallengeSucceeded}>Completei</button>
                 </footer>
             </div>
         ):(
