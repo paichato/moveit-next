@@ -33,6 +33,15 @@ export function Hero() {
     //to check if user is logged or not, if logged prevent from going to login
     if(Cookies.get('login')){
       router.replace('/moveit')
+      toast.dark("❌ Usuario Logado! Faça Logout para sair", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
   }, [])
 

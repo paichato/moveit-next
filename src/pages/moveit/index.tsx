@@ -17,7 +17,6 @@ import { useContext } from "react";
 
 import { useRouter } from "next/router";
 import { Sidebar } from "../../components/Sidebar";
-import { LogoutModal } from "../../components/LogoutModal";
 import { LogoutProvider } from "../../contexts/LogoutContext";
 
 interface HomeProps {
@@ -38,13 +37,7 @@ export default function Home(props: HomeProps) {
 
   return (
     <>
-      
-        <ChallengesProvider
-          level={props.level}
-          currentXp={props.currentXp}
-          challengesCompleted={props.challengesCompleted}
-        >
-          <ToastContainer
+    <ToastContainer
             position="top-center"
             autoClose={5000}
             hideProgressBar={false}
@@ -55,10 +48,17 @@ export default function Home(props: HomeProps) {
             draggable
             pauseOnHover
           />
+      
+        <ChallengesProvider
+          level={props.level}
+          currentXp={props.currentXp}
+          challengesCompleted={props.challengesCompleted}
+        >
+          
        
             
         <LogoutProvider>
-{/* <LogoutModal/> */}
+
        <Sidebar/>
        
          <div className={styles.container}>
