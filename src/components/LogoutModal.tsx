@@ -1,3 +1,4 @@
+import Cookies from 'js-cookie';
 import { useRouter } from 'next/router';
 import { useContext, useState } from 'react';
 import {GiExitDoor, GiCancel} from 'react-icons/gi';
@@ -11,8 +12,15 @@ export function LogoutModal(){
 
     const router = useRouter();
 
-    function handleExit(){
+    async function handleExit(){
         fechar();
+        Cookies.remove('name');
+        Cookies.remove('avatar');
+        Cookies.remove('login');
+        Cookies.remove('level');
+        Cookies.remove('currentXp');
+        Cookies.remove('challengesCompleted'); 
+
         router.push('/');
     }
 
