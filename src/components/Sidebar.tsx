@@ -17,7 +17,8 @@ import { BsClockHistory } from "react-icons/bs";
 import { BiShare } from "react-icons/bi";
 import { VscColorMode } from "react-icons/vsc";
 import { GiClockwork } from "react-icons/gi";
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import {AiOutlineCloudUpload, AiOutlineDownload, AiOutlineShareAlt} from 'react-icons/ai';
+import { ChakraProvider, extendTheme, useColorMode } from "@chakra-ui/react";
 import { CountdownContext } from "../contexts/CountdownContext";
 
 const theme = extendTheme({
@@ -39,10 +40,15 @@ const theme = extendTheme({
   },
 });
 
+
+
+
 export function Sidebar() {
   const router = useRouter();
   const { show, mostrar } = useContext(LogoutContext);
   const { setCTime } = useContext(CountdownContext);
+
+  
 
   useEffect(() => {}, [setCTime]);
 
@@ -77,9 +83,9 @@ export function Sidebar() {
         <button onClick={handleLogout}>
           <BiArrowBack />
         </button>
-
+        <ChakraProvider theme={theme}>
         <button style={{ background: "var(--blue)" }}>
-          <ChakraProvider theme={theme}>
+          
             <Menu isLazy placement="left">
               <MenuButton
                 as={Button}
@@ -109,7 +115,7 @@ export function Sidebar() {
                   }
                   style={{ color: "var(--title)", fontWeight: "bolder" }}
                 >
-                  DEMO - 5 s
+                  DEMO   - 5 s
                 </MenuItem>
                 <MenuDivider style={{ color: "var(--gray-line)" }} />
                 <MenuItem
@@ -118,26 +124,80 @@ export function Sidebar() {
                   icon={<BsClockHistory style={{ fill: "var(--blue-dark)" }} />}
                   style={{ color: "var(--title)", fontWeight: "bolder" }}
                 >
-                  POMODORO - 25 m
+                  POMODORO- 25 m
                 </MenuItem>
-                <MenuDivider />
+                <MenuDivider style={{ color: "var(--gray-line)" }} />
                 <MenuItem
                   value={2}
                   onClick={handleConfig}
                   icon={<GiClockwork style={{ fill: "var(--blue-dark)" }} />}
                   style={{ color: "var(--title)", fontWeight: "bolder" }}
                 >
-                  ADVANCED - 1 h
+                  ADVANCED- 1 h
                 </MenuItem>
               </MenuList>
             </Menu>
-          </ChakraProvider>
-        </button>
-        <button style={{ background: "var(--blue)" }}>
-          <BiShare />
+         
         </button>
 
-        <button style={{ fill: "var(--title)" }}>
+
+        <button style={{ background: "var(--blue)" }}>
+        <Menu isLazy placement="left">
+              <MenuButton
+                as={Button}
+                style={{
+                  background: "var(--blue)",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  display: "flex",
+                }}
+              >
+                <BiShare />
+              </MenuButton>
+              <MenuList
+                style={{
+                  background: "var(--white)",
+                  boxShadow: "0 0 20px rgba(0,0,200,0.2)",
+                  outline: "none",
+                  border: "none",
+                }}
+              >
+                <MenuItem
+                  role="menuitemradio"
+                  value={0}
+                  onClick={handleConfig}
+                  icon={
+                    <AiOutlineCloudUpload style={{ fill: "var(--blue-dark)" }} />
+                  }
+                  style={{ color: "var(--title)", fontWeight: "bolder" }}
+                >
+                  Save Data
+                </MenuItem>
+                <MenuDivider style={{ color: "var(--gray-line)" }} />
+                <MenuItem
+                  value={1}
+                  onClick={handleConfig}
+                  icon={<AiOutlineDownload style={{ fill: "var(--blue-dark)" }} />}
+                  style={{ color: "var(--title)", fontWeight: "bolder" }}
+                >
+                  Download Data
+                </MenuItem>
+                <MenuDivider style={{ color: "var(--gray-line)" }} />
+                <MenuItem
+                  value={2}
+                  onClick={handleConfig}
+                  icon={<AiOutlineShareAlt style={{ fill: "var(--blue-dark)" }} />}
+                  style={{ color: "var(--title)", fontWeight: "bolder" }}
+                >
+                  Share on Twitter
+                </MenuItem>
+              </MenuList>
+            </Menu>
+          
+        </button>
+        </ChakraProvider>
+        <button  style={{ fill: "var(--title)" }}>
+       
           <VscColorMode />
         </button>
       </div>
