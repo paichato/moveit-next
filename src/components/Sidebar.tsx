@@ -139,7 +139,7 @@ export function Sidebar() {
             </Menu>
          
         </button>
-{/* //back to business */}
+{/* //back to business.. for sure */}
 
         <button style={{ background: "var(--blue)" }}>
         <Menu isLazy placement="left">
