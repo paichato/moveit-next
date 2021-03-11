@@ -20,6 +20,7 @@ import { Sidebar } from "../../components/Sidebar";
 import { LogoutProvider } from "../../contexts/LogoutContext";
 import { ChakraProvider, CSSReset } from "@chakra-ui/react";
 import { extendTheme } from "@chakra-ui/react"
+import axios from "axios";
 
 
 interface HomeProps {

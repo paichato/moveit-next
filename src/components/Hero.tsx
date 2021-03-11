@@ -5,15 +5,16 @@ import { useContext, useEffect, useState } from "react";
 import { api } from "../api";
 import { toast } from "react-toastify";
 import { guest, LogginContext, user } from "../contexts/LogginContext";
-import  { useRouter } from "next/router";
-import  Cookies  from "js-cookie";
+import { useRouter } from "next/router";
+import Cookies from "js-cookie";
+import axios from "axios";
 interface userProps {
-    login: string;
-    avatar_url: string;
-    name: string;
-  }
+  login: string;
+  avatar_url: string;
+  name: string;
+}
 
-export let genUser:userProps={login:"",avatar_url:"",name:""};
+export let genUser: userProps = { login: "", avatar_url: "", name: "" };
 
 export function Hero() {
   const { isLogged, fazerLogin, setDadosUser } = useContext(LogginContext);
@@ -21,18 +22,16 @@ export function Hero() {
   const [gituser, setgituser] = useState("");
   const [input, setinput] = useState("");
 
-    const router=useRouter();
+  const router = useRouter();
 
   useEffect(() => {
     fazerLogin();
-
   }, [setDadosUser]);
 
   useEffect(() => {
-
     //to check if user is logged or not, if logged prevent from going to login
-    if(Cookies.get('login')){
-      router.replace('/moveit')
+    if (Cookies.get("login")) {
+      router.replace("/moveit");
       toast.dark("❌ Usuario Logado! Faça Logout para sair", {
         position: "top-center",
         autoClose: 5000,
@@ -43,7 +42,7 @@ export function Hero() {
         progress: undefined,
       });
     }
-  }, [])
+  }, []);
 
   async function handleSubmitUser(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -64,8 +63,8 @@ export function Hero() {
       await api
         .get(`/${input}?`)
         .then(function (response) {
-        //   genUser=response.data;
-        setDadosUser(response.data);
+          //   genUser=response.data;
+          setDadosUser(response.data);
 
           toast.success("✅Usuario encontrado -> logando...", {
             position: "bottom-left",
@@ -80,16 +79,15 @@ export function Hero() {
           console.log(response.data);
           console.log(user.name);
           console.log(Cookies.get());
-         
 
           // logar();
 
           console.log(isLogged);
           
-          router.replace('/moveit');
+          router.replace("/moveit");
         })
         .catch(function (error) {
-          setDadosUser(guest) ;
+          setDadosUser(guest);
           user.login = input;
           console.log(error);
 
@@ -108,7 +106,7 @@ export function Hero() {
           // logar();
           console.log(isLogged);
 
-          router.replace('/moveit');
+          router.replace("/moveit");
         })
         .then(function () {
           setinput("");

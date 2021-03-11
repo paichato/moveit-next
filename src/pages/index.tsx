@@ -1,43 +1,36 @@
-
 import { ToastContainer } from "react-toastify";
 import { Hero } from "../components/Hero";
-import {  LogginContext, LogginProvider } from "../contexts/LogginContext";
-
+import { LogginContext, LogginProvider } from "../contexts/LogginContext";
 
 import "react-toastify/dist/ReactToastify.css";
 import { useContext, useEffect } from "react";
 import { useRouter } from "next/router";
-
-
+import axios from "axios";
 
 export default function Login() {
-  const router=useRouter();
-  const {isLogged}= useContext(LogginContext);
+  const router = useRouter();
+  const { isLogged } = useContext(LogginContext);
 
-useEffect(() => {
-
-
-
-  
-}, [])
+  useEffect(() => {
     
+  }, []);
 
-  return(
-      <>
+  return (
+    <>
       <ToastContainer
-            position="top-center"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-          />
-      <LogginProvider >
-         <Hero />
-     </LogginProvider>
-  </>
-  )
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+      <LogginProvider>
+        <Hero />
+      </LogginProvider>
+    </>
+  );
 }

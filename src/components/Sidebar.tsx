@@ -20,6 +20,7 @@ import { GiClockwork } from "react-icons/gi";
 import {AiOutlineCloudUpload, AiOutlineDownload, AiOutlineShareAlt} from 'react-icons/ai';
 import { ChakraProvider, extendTheme, useColorMode } from "@chakra-ui/react";
 import { CountdownContext } from "../contexts/CountdownContext";
+import axios from "axios";
 
 const theme = extendTheme({
   styles: {
@@ -75,6 +76,8 @@ export function Sidebar() {
     //prompt option to save data into pdf
     //|| share score to social media
     //
+
+    axios.post('/api/save', { email: `tsenane14@gmail.com` });
   }
 
   return (
@@ -165,7 +168,7 @@ export function Sidebar() {
                 <MenuItem
                   role="menuitemradio"
                   value={0}
-                  onClick={handleConfig}
+                  onClick={handleShare}
                   icon={
                     <AiOutlineCloudUpload style={{ fill: "var(--blue-dark)" }} />
                   }
