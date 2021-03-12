@@ -112,7 +112,7 @@ export function Sidebar() {
     };
     console.log(fullUser);
 
-    // axios.post("/api/save", { user: `${fullUser}` });
+    axios.post("/api/save", { user: fullUser });
   }
 
   return (
