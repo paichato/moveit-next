@@ -38,12 +38,13 @@ export default async (request:VercelRequest, response:VercelResponse)=>{
     
     
     const {user}=request.body;
-    console.log(request.body);
+    console.log(request.cookies);
     
 
     const db= await connectToDatabase(process.env.MONGODB_URI);
     const collection= db.collection('users')
 
+    //    await collection.find({users:"facebook"}) -> continuar hoje. Verificar se ja existe na db
     await collection.insertOne({
         user:user,
         subscribedAt: new Date(),
