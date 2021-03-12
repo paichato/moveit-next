@@ -30,6 +30,8 @@ import { fullUser } from "../pages/moveit";
 import { GetServerSideProps } from "next";
 import { LogginContext, user } from "../contexts/LogginContext";
 import { ChallengesContext } from "../contexts/ChallengeContext";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // {
 //   login: "",
@@ -112,11 +114,33 @@ export function Sidebar() {
     };
     console.log(fullUser);
 
-    axios.post("/api/save", { user: fullUser });
+    axios.post("/api/save", { user: fullUser }).then(function(response){
+      
+      toast.success("✅ Dados Salvados", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    });
   }
 
   return (
     <>
+    <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <div className={styles.container}>
         <button onClick={handleLogout}>
           <BiArrowBack />
