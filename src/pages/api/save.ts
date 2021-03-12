@@ -1,7 +1,10 @@
 import {VercelRequest, VercelResponse} from '@vercel/node';
 import { MongoClient, Db } from 'mongodb'
+// import {fullUser} from '../../pages/moveit'
 
 let cachedDb: Db=null;
+
+
 
 async function connectToDatabase(uri:string){
 
@@ -24,8 +27,16 @@ async function connectToDatabase(uri:string){
 }
 
 export default async (request:VercelRequest, response:VercelResponse)=>{
-    const {email}=request.body;
+    const {user}=request.body;
 
     const db= await connectToDatabase(process.env.MONGODB_URI);
-    return response.json({message: `Hello ${email}`});
+    const collection= db.collection('users')
+
+    await collection.insertOne({
+        user,
+        subscribedAt: new Date(),
+
+    })
+
+    return response.status(201).json({ok:true});
 }

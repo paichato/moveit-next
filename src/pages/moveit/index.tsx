@@ -12,7 +12,7 @@ import { ChallengesProvider } from "../../contexts/ChallengeContext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import { LogginContext} from "../../contexts/LogginContext";
+import { LogginContext, LogginProvider} from "../../contexts/LogginContext";
 import { useContext } from "react";
 
 import { useRouter } from "next/router";
@@ -22,7 +22,15 @@ import { ChakraProvider, CSSReset } from "@chakra-ui/react";
 import { extendTheme } from "@chakra-ui/react"
 import axios from "axios";
 
-
+interface fullUserData {
+  login: String;
+  avatar: String;
+  name: String;
+  level: number;
+  challengeCompleted: number;
+  currentXp: number;
+}
+export let fullUser: fullUserData = null;
 interface HomeProps {
   level: number;
   currentXp: number;
@@ -59,7 +67,7 @@ export default function Home(props: HomeProps) {
             draggable
             pauseOnHover
           />
-      
+      <LogginProvider>
         <ChallengesProvider
           level={props.level}
           currentXp={props.currentXp}
@@ -99,19 +107,23 @@ export default function Home(props: HomeProps) {
             )
          </LogoutProvider>
         </ChallengesProvider>
-     
+        </LogginProvider>
     </>
   );
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const { level, currentXp, challengesCompleted } = ctx.req.cookies;
+  const { level, currentXp, challengesCompleted, name, login, avatar } = ctx.req.cookies;
 
   return {
     props: {
       level: Number(level),
       currentXp: Number(currentXp),
       challengesCompleted: Number(challengesCompleted),
+      name: String(name),
+      login: String(login),
+      avatar: String(avatar)
+
       
     },
   };

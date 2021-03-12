@@ -1,5 +1,5 @@
 import styles from "../styles/component/Sidebar.module.css";
-import { BiArrowBack } from "react-icons/bi";
+import { BiArrowBack, BiCommentX } from "react-icons/bi";
 import { IoMdOptions } from "react-icons/io";
 import { useRouter } from "next/router";
 import { useContext, useEffect } from "react";
@@ -17,10 +17,37 @@ import { BsClockHistory } from "react-icons/bs";
 import { BiShare } from "react-icons/bi";
 import { VscColorMode } from "react-icons/vsc";
 import { GiClockwork } from "react-icons/gi";
-import {AiOutlineCloudUpload, AiOutlineDownload, AiOutlineShareAlt} from 'react-icons/ai';
+import {
+  AiOutlineCloudUpload,
+  AiOutlineDownload,
+  AiOutlineShareAlt,
+} from "react-icons/ai";
 import { ChakraProvider, extendTheme, useColorMode } from "@chakra-ui/react";
 import { CountdownContext } from "../contexts/CountdownContext";
 import axios from "axios";
+import Cookies from "js-cookie";
+import { fullUser } from "../pages/moveit";
+import { GetServerSideProps } from "next";
+import { LogginContext, user } from "../contexts/LogginContext";
+import { ChallengesContext } from "../contexts/ChallengeContext";
+
+// {
+//   login: "",
+//   avatar: "",
+//   name: "",
+//   level: 0,
+//   challengeCompleted: 0,
+//   currentXp: 0,
+// }
+
+interface fullUserData {
+  login: String;
+  avatar: String;
+  name: String;
+  level: number;
+  challengeCompleted: number;
+  currentXp: number;
+}
 
 const theme = extendTheme({
   styles: {
@@ -41,15 +68,14 @@ const theme = extendTheme({
   },
 });
 
-
-
-
 export function Sidebar() {
   const router = useRouter();
   const { show, mostrar } = useContext(LogoutContext);
   const { setCTime } = useContext(CountdownContext);
-
-  
+  const { level, challengesCompleted, currentXp } = useContext(
+    ChallengesContext
+  );
+  const {userData} = useContext(LogginContext);
 
   useEffect(() => {}, [setCTime]);
 
@@ -58,7 +84,7 @@ export function Sidebar() {
     //if yes -> remove cookies && router.push('/')
     //if no -> close modal
     mostrar();
-    console.log("mostrar");
+    console.log("logout");
   }
 
   function handleConfig(e: React.FormEvent<HTMLButtonElement>) {
@@ -76,8 +102,17 @@ export function Sidebar() {
     //prompt option to save data into pdf
     //|| share score to social media
     //
+    const fullUser: fullUserData = {
+      name: userData.name,
+      avatar: userData.avatar_url,
+      login: userData.login,
+      challengeCompleted: challengesCompleted,
+      currentXp: currentXp,
+      level: level,
+    };
+    console.log(fullUser);
 
-    axios.post('/api/save', { email: `tsenane14@gmail.com` });
+    // axios.post("/api/save", { user: `${fullUser}` });
   }
 
   return (
@@ -87,8 +122,7 @@ export function Sidebar() {
           <BiArrowBack />
         </button>
         <ChakraProvider theme={theme}>
-        <button style={{ background: "var(--blue)" }}>
-          
+          <button style={{ background: "var(--blue)" }}>
             <Menu isLazy placement="left">
               <MenuButton
                 as={Button}
@@ -118,7 +152,7 @@ export function Sidebar() {
                   }
                   style={{ color: "var(--title)", fontWeight: "bolder" }}
                 >
-                  DEMO   - 5 s
+                  DEMO - 5 s
                 </MenuItem>
                 <MenuDivider style={{ color: "var(--gray-line)" }} />
                 <MenuItem
@@ -140,12 +174,11 @@ export function Sidebar() {
                 </MenuItem>
               </MenuList>
             </Menu>
-         
-        </button>
-{/* //back to business.. for sure */}
+          </button>
+          {/* //back to business.. for sure */}
 
-        <button style={{ background: "var(--blue)" }}>
-        <Menu isLazy placement="left">
+          <button style={{ background: "var(--blue)" }}>
+            <Menu isLazy placement="left">
               <MenuButton
                 as={Button}
                 style={{
@@ -170,7 +203,9 @@ export function Sidebar() {
                   value={0}
                   onClick={handleShare}
                   icon={
-                    <AiOutlineCloudUpload style={{ fill: "var(--blue-dark)" }} />
+                    <AiOutlineCloudUpload
+                      style={{ fill: "var(--blue-dark)" }}
+                    />
                   }
                   style={{ color: "var(--title)", fontWeight: "bolder" }}
                 >
@@ -180,7 +215,9 @@ export function Sidebar() {
                 <MenuItem
                   value={1}
                   onClick={handleConfig}
-                  icon={<AiOutlineDownload style={{ fill: "var(--blue-dark)" }} />}
+                  icon={
+                    <AiOutlineDownload style={{ fill: "var(--blue-dark)" }} />
+                  }
                   style={{ color: "var(--title)", fontWeight: "bolder" }}
                 >
                   Download Data
@@ -189,21 +226,36 @@ export function Sidebar() {
                 <MenuItem
                   value={2}
                   onClick={handleConfig}
-                  icon={<AiOutlineShareAlt style={{ fill: "var(--blue-dark)" }} />}
+                  icon={
+                    <AiOutlineShareAlt style={{ fill: "var(--blue-dark)" }} />
+                  }
                   style={{ color: "var(--title)", fontWeight: "bolder" }}
                 >
                   Share on Twitter
                 </MenuItem>
               </MenuList>
             </Menu>
-          
-        </button>
+          </button>
         </ChakraProvider>
-        <button  style={{ fill: "var(--title)" }}>
-       
+        <button style={{ fill: "var(--title)" }}>
           <VscColorMode />
         </button>
       </div>
     </>
   );
 }
+// export const getServerSideProps: GetServerSideProps = async (ctx) => {
+//   const { level, currentXp, challengesCompleted, login, name, avatar } = ctx.req.cookies;
+
+//   return {
+//     props: {
+//       level: Number(level),
+//       currentXp: Number(currentXp),
+//       challengesCompleted: Number(challengesCompleted),
+//       login: login,
+//       name: name,
+//       avatar:avatar
+
+//     },
+//   };
+// };

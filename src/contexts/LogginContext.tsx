@@ -7,7 +7,7 @@ import Cookies from 'js-cookie'
 interface LogginContextData {
   isLogged: boolean;
   fazerLogin: () => void;
- 
+  userData: userProps;
   // guest:userProps;
   setDadosUser:(u)=>void;
 }
@@ -61,7 +61,8 @@ useEffect(() => {
 
   }
   function setDadosUser(u:userProps){
-   user=u;     
+   user=u; 
+  //  setuserData(u);    
   }
 
   
@@ -71,6 +72,7 @@ useEffect(() => {
     <LogginContext.Provider value={{
       isLogged,
       fazerLogin,
+      userData,
       
       setDadosUser,
       
