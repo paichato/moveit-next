@@ -77,7 +77,7 @@ export function Sidebar() {
   const { level, challengesCompleted, currentXp } = useContext(
     ChallengesContext
   );
-  const {userData} = useContext(LogginContext);
+  const { userData } = useContext(LogginContext);
 
   useEffect(() => {}, [setCTime]);
 
@@ -104,6 +104,16 @@ export function Sidebar() {
     //prompt option to save data into pdf
     //|| share score to social media
     //
+    toast.warn("⚠ Salvando...", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+
     const fullUser: fullUserData = {
       name: userData.name,
       avatar: userData.avatar_url,
@@ -114,33 +124,35 @@ export function Sidebar() {
     };
     console.log(fullUser);
 
-    axios.post("/api/save", { user: fullUser }).then(function(response){
-      
-      toast.success("✅ Dados Salvados", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
+    axios
+      .post("/api/save", { user: fullUser })
+      .then(function (response) {
+        toast.success("✅ Dados Salvados", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      })
+      .catch(function (error) {
+        toast.dark("❌ Algo deu errado, tente novamente", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
       });
-    }).catch(function(error){
-      toast.dark("❌ Algo deu errado, tente novamente", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
-    });
   }
 
   return (
     <>
-    <ToastContainer
+      <ToastContainer
         position="top-center"
         autoClose={5000}
         hideProgressBar={false}
