@@ -36,7 +36,7 @@ async function connectToDatabase(uri:string){
 }
 
 export default async (request:VercelRequest, response:VercelResponse)=>{
-    
+    // back to business
     
     const {user}=request.body;
     console.log(request.cookies);
