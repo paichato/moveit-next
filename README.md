@@ -4,7 +4,7 @@
 ![languages](https://img.shields.io/github/languages/count/paichato/moveit-next?style=flat-square)
 ![](https://img.shields.io/github/languages/top/paichato/moveit-next)
 
-### <a href="#visual">Preview👀</a> | <a href="#htrun">How to run🔧</a> | <a href="#dep">Dependencies➕</a> | <a href="#feat">Features🌟</a> | [LIVE-DEMO](https://moveit-next-iymomt6wm-paichato.vercel.app/)🚀</br>
+### <a href="#visual">Preview👀</a> | <a href="#htrun">How to run🔧</a> | <a href="#dep">Dependencies➕</a> | <a href="#feat">Features🌟</a> | [LIVE-DEMO](https://moveit-next-hfv4sbooo-paichato.vercel.app/)🚀</br>
 
 
 
